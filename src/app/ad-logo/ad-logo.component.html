@@ -1,0 +1,8 @@
+<div class="form-group" [formGroup]="form">
+  <div *ngFor="let settingItem of setting.children" class="form-row">
+    <app-ad-setting
+      [setting]="settingItem"
+      [form]="setting.getFormGroup(form)"
+    ></app-ad-setting>
+  </div>
+</div>

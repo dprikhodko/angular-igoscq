@@ -1,0 +1,4 @@
+<div [formGroup]="form">
+  <label [attr.for]="setting.key">{{ setting.label }}</label>
+  <input type="file" [formControlName]="setting.key" [id]="setting.key" />
+</div>

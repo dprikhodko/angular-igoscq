@@ -1,0 +1,58 @@
+<container-element [ngSwitch]="setting.controlType">
+  <app-ad-text-input
+    *ngSwitchCase="SettingTypes.TEXT"
+    [setting]="setting"
+    [form]="form"
+  ></app-ad-text-input>
+
+  <app-ad-textarea
+    *ngSwitchCase="SettingTypes.TEXTAREA"
+    [setting]="setting"
+    [form]="form"
+  ></app-ad-textarea>
+
+  <app-ad-logo
+    *ngSwitchCase="SettingTypes.LOGO"
+    [setting]="setting"
+    [form]="form"
+  ></app-ad-logo>
+
+  <app-ad-upload
+    *ngSwitchCase="SettingTypes.UPLOAD"
+    [setting]="setting"
+    [form]="form"
+  ></app-ad-upload>
+
+  <app-ad-checkbox
+    *ngSwitchCase="SettingTypes.CHECKBOX"
+    [setting]="setting"
+    [form]="form"
+  ></app-ad-checkbox>
+
+  <!-- 
+  <app-ad-color-picker
+    *ngSwitchCase="SettingTypes.COLOR_PICKER"
+    [setting]="setting"
+  ></app-ad-color-picker>
+
+  <app-ad-dropdown
+    *ngSwitchCase="SettingTypes.DROPDOWN"
+    [setting]="setting"
+  ></app-ad-dropdown>
+
+  <app-ad-radios
+    *ngSwitchCase="SettingTypes.RADIOS"
+    [setting]="setting"
+  ></app-ad-radios>
+
+  <app-ad-rich-text
+    *ngSwitchCase="SettingTypes.RICH_TEXT"
+    [setting]="setting"
+    [form]="form"
+  ></app-ad-rich-text>
+
+  <app-ad-tap-action
+    *ngSwitchCase="SettingTypes.TAP_ACTION"
+    [setting]="setting"
+  ></app-ad-tap-action> -->
+</container-element>
