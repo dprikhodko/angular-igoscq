@@ -1,0 +1,8 @@
+<div [formGroup]="form">
+  <label [attr.for]="setting.key">{{ setting.label }}</label>
+  <select [id]="setting.key" [formControlName]="setting.key">
+    <option *ngFor="let opt of setting.options" [value]="opt.key">
+      {{ opt.value }}
+    </option>
+  </select>
+</div>

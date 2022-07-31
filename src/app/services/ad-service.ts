@@ -79,19 +79,19 @@ export class AdService {
       //     }),
       //   ],
       // }),
-      // new DropdownSetting({
-      //   key: "backgroundTheme",
-      //   label: "Background theme",
-      //   options: [
-      //     { key: "website", value: "Tap to website" },
-      //     { key: "map", value: "Tap to map" },
-      //     { key: "video", value: "Tap to video" },
-      //   ],
-      // }),
-      // new TextareaSetting({
-      //   key: "comment",
-      //   label: "Comment",
-      // }),
+      new DropdownSetting({
+        key: "backgroundTheme",
+        label: "Background theme",
+        options: [
+          { key: "website", value: "Tap to website" },
+          { key: "map", value: "Tap to map" },
+          { key: "video", value: "Tap to video" },
+        ],
+      }),
+      new TextareaSetting({
+        key: "comment",
+        label: "Comment",
+      }),
     ];
 
     return settings;
