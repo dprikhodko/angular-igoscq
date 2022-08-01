@@ -1,0 +1,9 @@
+<div [formGroup]="form">
+  <label [attr.for]="setting.key">{{ setting.label }}</label>
+  <input
+    [formControlName]="setting.key"
+    [id]="setting.key"
+    type="text"
+    placeholder="Please enter the address"
+  />
+</div>

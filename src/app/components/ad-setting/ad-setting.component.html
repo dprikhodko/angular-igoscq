@@ -1,4 +1,10 @@
 <container-element [ngSwitch]="setting.controlType">
+  <app-ad-setting-section
+    *ngSwitchCase="SettingTypes.SECTION"
+    [setting]="setting"
+    [form]="form"
+  ></app-ad-setting-section>
+
   <app-ad-text-input
     *ngSwitchCase="SettingTypes.TEXT"
     [setting]="setting"
@@ -10,12 +16,6 @@
     [setting]="setting"
     [form]="form"
   ></app-ad-textarea>
-
-  <app-ad-logo
-    *ngSwitchCase="SettingTypes.LOGO"
-    [setting]="setting"
-    [form]="form"
-  ></app-ad-logo>
 
   <app-ad-upload
     *ngSwitchCase="SettingTypes.UPLOAD"
@@ -35,6 +35,12 @@
     [form]="form"
   ></app-ad-dropdown>
 
+  <app-ad-setting-map
+    *ngSwitchCase="SettingTypes.MAP"
+    [setting]="setting"
+    [form]="form"
+  ></app-ad-setting-map>
+
   <!-- 
   <app-ad-color-picker
     *ngSwitchCase="SettingTypes.COLOR_PICKER"
@@ -50,10 +56,5 @@
     *ngSwitchCase="SettingTypes.RICH_TEXT"
     [setting]="setting"
     [form]="form"
-  ></app-ad-rich-text>
-
-  <app-ad-tap-action
-    *ngSwitchCase="SettingTypes.TAP_ACTION"
-    [setting]="setting"
-  ></app-ad-tap-action> -->
+  ></app-ad-rich-text> -->
 </container-element>

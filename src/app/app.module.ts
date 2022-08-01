@@ -6,18 +6,17 @@ import { HttpClientModule } from "@angular/common/http";
 
 import { AppComponent } from "./app.component";
 import { AdMessengerComponent } from "./components/ad-messenger/ad-messenger.component";
-import { AdTextInputComponent } from "./components/ad-text-input/ad-text-input.component";
-import { AdRichTextComponent } from "./components/ad-rich-text/ad-rich-text.component";
-import { AdColorPickerComponent } from "./components/ad-color-picker/ad-color-picker.component";
-import { AdLogoComponent } from "./components/ad-logo/ad-logo.component";
-import { AdTapActionComponent } from "./components/ad-tap-action/ad-tap-action.component";
-import { AdDropdownComponent } from "./components/ad-dropdown/ad-dropdown.component";
-import { AdTextareaComponent } from "./components/ad-textarea/ad-textarea.component";
-import { AdCheckboxComponent } from "./components/ad-checkbox/ad-checkbox.component";
-import { AdRadiosComponent } from "./components/ad-radios/ad-radios.component";
+import { AdTextInputComponent } from "./components/ad-setting-text/ad-text-input.component";
+import { AdRichTextComponent } from "./components/ad-setting-richtext/ad-rich-text.component";
+import { AdColorPickerComponent } from "./components/ad-setting-color-picker/ad-color-picker.component";
+import { AdDropdownComponent } from "./components/ad-setting-dropdown/ad-dropdown.component";
+import { AdTextareaComponent } from "./components/ad-setting-textarea/ad-textarea.component";
+import { AdCheckboxComponent } from "./components/ad-setting-checkbox/ad-checkbox.component";
+import { AdRadiosComponent } from "./components/ad-setting-radios/ad-radios.component";
 import { AdSettingComponent } from "./components/ad-setting/ad-setting.component";
-import { AdUploadComponent } from "./components/ad-upload/ad-upload.component";
-import { AdContainerComponent } from "./components/ad-container/ad-container.component";
+import { AdUploadComponent } from "./components/ad-setting-upload/ad-upload.component";
+import { AdSettingSectionComponent } from "./components/ad-setting-section/ad-setting-section.component";
+import { AdSettingMapComponent } from './components/ad-setting-map/ad-setting-map.component';
 
 @NgModule({
   imports: [
@@ -32,22 +31,15 @@ import { AdContainerComponent } from "./components/ad-container/ad-container.com
     AdTextInputComponent,
     AdRichTextComponent,
     AdColorPickerComponent,
-    AdLogoComponent,
-    AdTapActionComponent,
     AdDropdownComponent,
     AdTextareaComponent,
     AdCheckboxComponent,
     AdRadiosComponent,
     AdSettingComponent,
     AdUploadComponent,
-    AdContainerComponent,
+    AdSettingSectionComponent,
+    AdSettingMapComponent,
   ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/

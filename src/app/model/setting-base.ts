@@ -10,6 +10,7 @@ export class SettingBase {
   type: string;
   children: SettingBase[];
   options: { key: string; value: string }[];
+  relevant: (arg: any) => boolean;
 
   constructor(
     options: {
@@ -22,6 +23,7 @@ export class SettingBase {
       type?: string;
       children?: SettingBase[];
       options?: { key: string; value: string }[];
+      relevant?: (arg: any) => boolean;
     } = {}
   ) {
     this.value = options.value || "";
@@ -33,16 +35,37 @@ export class SettingBase {
     this.type = options.type || "";
     this.children = options.children || [];
     this.options = options.options || [];
+    this.relevant =
+      options.relevant ||
+      function () {
+        return true;
+      };
   }
 
-  getFormElement() {
+  createFormElement() {
     if (this.children.length === 0) {
       return new FormControl("");
     }
 
     const group: any = {};
     this.children.forEach((child) => {
-      group[child.key] = child.getFormElement();
+      group[child.key] = child.createFormElement();
+    });
+    return new FormGroup(group);
+  }
+
+  updateFormElement(form: FormControl) {
+    if (!this.relevant(form)) {
+      return null;
+    }
+
+    if (this.children.length === 0) {
+      return new FormControl("");
+    }
+
+    const group: any = {};
+    this.children.forEach((child) => {
+      group[child.key] = child.createFormElement();
     });
     return new FormGroup(group);
   }

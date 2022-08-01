@@ -18,7 +18,7 @@ export class AdMessengerComponent implements OnInit {
 
   ngOnInit(): void {
     this.settings = this.adService.getSettings();
-    this.form = this.adService.getFormElement(this.settings);
+    this.form = this.adService.createForm(this.settings);
   }
 
   onSubmit() {

@@ -4,12 +4,10 @@ import { FormGroup } from "@angular/forms";
 import { SettingBase } from "../model/setting-base";
 import { TextSetting } from "../model/text-setting";
 import { RichTextSetting } from "../model/rich-text-setting";
-import { ColorsSetting } from "../model/colors-setting";
 import { ColorPickerSetting } from "../model/color-picker-setting";
-import { LogoSetting } from "../model/logo-setting";
+import { SectionSetting } from "../model/section-setting";
 import { UploadSetting } from "../model/upload-setting";
 import { CheckboxSetting } from "../model/checkbox-setting";
-import { TapActionSetting } from "../model/tap-action-setting";
 import { DropdownSetting } from "../model/dropdown-setting";
 import { TextareaSetting } from "../model/textarea-setting copy";
 
@@ -39,53 +37,58 @@ export class AdService {
       //     }),
       //   ],
       // }),
-      new LogoSetting({
+      new SectionSetting({
         key: "logo",
         children: [
           new UploadSetting({
             key: "logoUpload",
             label: "Logo",
           }),
-          new CheckboxSetting({
-            key: "logoHold",
-            label: "Logo hold",
-          }),
-          new CheckboxSetting({
-            key: "hideXbutton",
-            label: "Hide X button",
-          }),
-          new CheckboxSetting({
-            key: "flyingButton",
-            label: "Flying button",
+          new SectionSetting({
+            key: "logoBehavior",
+            children: [
+              new CheckboxSetting({
+                key: "logoHold",
+                label: "Logo hold",
+              }),
+              new CheckboxSetting({
+                key: "hideXbutton",
+                label: "Hide X button",
+              }),
+              new CheckboxSetting({
+                key: "flyingButton",
+                label: "Flying button",
+              }),
+            ],
           }),
         ],
       }),
-      // // TODO add all types configuration
-      // new TapActionSetting({
-      //   key: "tapActionSetting",
-      //   children: [
-      //     new DropdownSetting({
-      //       key: "tapAction",
-      //       label: "Tap action",
-      //       options: [
-      //         { key: "website", value: "Tap to website" },
-      //         { key: "map", value: "Tap to map" },
-      //         { key: "video", value: "Tap to video" },
-      //       ],
-      //     }),
-      //     new TextSetting({
-      //       key: "websiteUrl",
-      //       label: "Website URL",
-      //     }),
-      //   ],
-      // }),
+      // TODO add all types configuration
+      new SectionSetting({
+        key: "tapActionSetting",
+        children: [
+          new DropdownSetting({
+            key: "tapAction",
+            label: "Tap action",
+            options: [
+              { key: "website", value: "Tap to website" },
+              { key: "map", value: "Tap to map" },
+              { key: "video", value: "Tap to video" },
+            ],
+          }),
+          new TextSetting({
+            key: "websiteUrl",
+            label: "Website URL",
+          }),
+        ],
+      }),
       new DropdownSetting({
         key: "backgroundTheme",
         label: "Background theme",
         options: [
-          { key: "website", value: "Tap to website" },
-          { key: "map", value: "Tap to map" },
-          { key: "video", value: "Tap to video" },
+          { key: "website", value: "Background theme website" },
+          { key: "map", value: "Background theme to map" },
+          { key: "video", value: "Background theme to video" },
         ],
       }),
       new TextareaSetting({
@@ -97,11 +100,13 @@ export class AdService {
     return settings;
   }
 
-  getFormElement(settings: SettingBase[]) {
+  createForm(settings: SettingBase[]) {
     const group: any = {};
     settings.forEach((setting) => {
-      group[setting.key] = setting.getFormElement();
+      group[setting.key] = setting.createFormElement();
     });
     return new FormGroup(group);
   }
+
+  updateForm(form: FormGroup, settings: SettingBase[]) {}
 }

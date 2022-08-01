@@ -1,11 +1,10 @@
 export const TEXT = "text";
 export const CHECKBOX = "checkbox";
-export const COLORS = "colors";
 export const COLOR_PICKER = "color-picker";
 export const DROPDOWN = "dropdown";
-export const LOGO = "logo";
+export const SECTION = "section";
 export const RADIOS = "radios";
-export const RICH_TEXT = "rich-text";
-export const TAP_ACTION = "tap-action";
+export const RICHTEXT = "rich-text";
 export const TEXTAREA = "textarea";
 export const UPLOAD = "upload";
+export const MAP = "map";

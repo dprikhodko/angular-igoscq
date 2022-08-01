@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { FormGroup } from "@angular/forms";
 import { SettingBase } from "../../model/setting-base";
-import * as SettingTypes from "../../model/setting-type";
+import * as SettingTypes from "../../model/setting-types";
 
 @Component({
   selector: "app-ad-setting",

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdTapActionComponent } from './ad-tap-action.component';
+import { AdSettingMapComponent } from './ad-setting-map.component';
 
-describe('AdTapActionComponent', () => {
-  let component: AdTapActionComponent;
-  let fixture: ComponentFixture<AdTapActionComponent>;
+describe('AdSettingMapComponent', () => {
+  let component: AdSettingMapComponent;
+  let fixture: ComponentFixture<AdSettingMapComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AdTapActionComponent ]
+      declarations: [ AdSettingMapComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AdTapActionComponent);
+    fixture = TestBed.createComponent(AdSettingMapComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
